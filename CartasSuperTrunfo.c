@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    // 8 estados, 4 cidades = 8*4=32
-    char estado1[8], estado2[8];
-    char codigocarta1[4], codigocarta2[4];   
+    
+    char estado1[20], estado2[20];
+    char codigocarta1[20], codigocarta2[20];   
     char cidade1[32], cidade2[32];
     float area1, area2;
     float pib1, pib2;
@@ -46,9 +46,10 @@ int main() {
     printf("PIB per capita: %.2f\n", pib_percapita1);
 
     // Calculando o super poder (exemplo de fórmula)
-    superpoder1 = (pib_percapita1 * turisticos1) / densidade1;
+    superpoder1 = populacao1 + area1 + pib1 + turisticos1;
     printf("Super poder: %.2f\n", superpoder1);
 
+    //cadastro carta 2
     printf("Entre com seu estado: \n");
     scanf("%s", estado2);
 
@@ -79,7 +80,35 @@ int main() {
     printf("PIB per capita: %.2f\n", pib_percapita2);
 
     // Calculando o super poder 
-    superpoder2 = (pib_percapita2 * turisticos2) / densidade2;
+    superpoder2 = populacao2 + area2 + pib2 + turisticos2;
     printf("Super poder: %.2f\n", superpoder2);
-    return 0;
+
+    // Mostrando os Resultaddos
+    printf("=======RESULTADOS=======\n");
+    printf("Estado: %s\n", estado1);
+    printf("Código carta: %s\n", codigocarta1);
+    printf("Cidade: %s\n", cidade1);
+    printf("Área (em km²): %.2f\n", area1);
+    printf("População: %lu\n", populacao1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Pontos Turísticos: %d\n", turisticos1);
+    printf("Densidade Populacional: %.2f\n", densidade1);
+    printf("PIB per Capita: %.2f\n", pib_percapita1);
+    printf("Super Poder: %.2f\n", superpoder1);
+
+
+    // Resultado carta 2
+    printf("=======RESULTADOS=======\n");
+    printf("Estado: %s\n", estado2);
+    printf("Código carta: %s\n", codigocarta2);
+    printf("Cidade: %s\n", cidade2);
+    printf("Área (em km²): %.2f\n", area2);
+    printf("População: %lu\n", populacao2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Pontos Turísticos: %d\n", turisticos2);
+    printf("Densidade Populacional: %.2f\n", densidade2);
+    printf("PIB per Capita: %.2f\n", pib_percapita2);
+    printf("Super Poder: %.2f\n", superpoder2);
+
+return 0;
 }
