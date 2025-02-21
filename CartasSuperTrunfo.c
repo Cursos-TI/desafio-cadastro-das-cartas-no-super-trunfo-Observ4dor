@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+    //No cadastro das cartas estava dando algum problema de Pular as linhas quando ia dar saida
+    //Então o jeito que eu procurei e conseguir arrumar foi com %[^\n].
 int main() {
     
     char estado1[20], estado2[20];
@@ -17,13 +19,13 @@ int main() {
 
     // Cadastro das cartas
     printf("Entre com seu estado: \n");
-    scanf(" %[^\n]", &estado1);
+    scanf(" %[^\n]", estado1);
 
     printf("Digite o Código da carta: \n");
-    scanf("%s", &codigocarta1);
+    scanf("%s", codigocarta1);
 
     printf("Entre com sua cidade: \n");
-    scanf(" %[^\n]", &cidade1);
+    scanf(" %[^\n]", cidade1);
 
     printf("Digite a área (em km²): \n");
     scanf("%f", &area1);
@@ -51,13 +53,13 @@ int main() {
 
     //cadastro carta 2
     printf("Entre com seu estado: \n");
-    scanf(" %[^\n]", &estado2);
+    scanf(" %[^\n]", estado2);
 
     printf("Digite o Código da carta: \n");
-    scanf("%s", &codigocarta2);
+    scanf("%s", codigocarta2);
 
     printf("Entre com sua cidade: \n");
-    scanf(" %[^\n]", &cidade2);
+    scanf(" %[^\n]", cidade2);
 
     printf("Digite a área (em km²): \n");
     scanf("%f", &area2);
@@ -110,8 +112,9 @@ int main() {
     printf("PIB per Capita: %.2f\n", pib_percapita2);
     printf("Super Poder: %.2f\n", superpoder2);
 
-
-
+    printf("### COMPARANDO AS CARTAS ###\n");
+    
+    // Comparando os atributos
     if (densidade1 < densidade2){
         printf("A Cidade 1 vence a Densisade Populacional!\n");
     }else{
@@ -143,11 +146,10 @@ int main() {
     }    
  
     if (superpoder1 > superpoder2){
-        printf("O super poder 1 e maior! \n");
+        printf("A Cidade 1 vence no Super Poder!\n");
     }else{
-        printf("o super poder 2 e maior! \n");
+        printf("A Cidade 2 vence no Super Poder!\n");
     }
-
 
     return 0;
 }
